@@ -1,6 +1,6 @@
 ﻿# -*- coding: utf-8 -*-
 import httpx
-from typing import List
+from typing import List, Optional
 from random import randint
 from .BaseService import BaseService, BaseServiceHandler, BaseServiceStruct
 
@@ -110,9 +110,9 @@ class TalkService(BaseService):
         msgData: any,
         text: str,
         contentType: int = 0,
-        contentMetadata: dict = None,
-        location: dict = None,
-        relatedMessageId: str = None,
+        contentMetadata: Optional[dict] = None,
+        location: Optional[dict] = None,
+        relatedMessageId: Optional[str] = None,
     ):
         to = self.checkAndGetValue(msgData, "to", 2)
         toType = self.checkAndGetValue(msgData, "toType", 3)

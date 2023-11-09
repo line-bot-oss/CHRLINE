@@ -1,3 +1,4 @@
+from typing import Optional
 import gevent.monkey
 
 from .services.thrift.ttypes import SquareException
@@ -34,22 +35,22 @@ class CHRLINE(
 ):
     def __init__(
         self,
-        authTokenOrEmail: str = None,
-        password: str = None,
+        authTokenOrEmail: Optional[str] = None,
+        password: Optional[str] = None,
         device: str = "CHROMEOS",
-        version: str = None,
-        os_name: str = None,
-        os_version: str = None,
+        version: Optional[str] = None,
+        os_name: Optional[str] = None,
+        os_version: Optional[str] = None,
         noLogin: bool = False,
         encType: int = 1,
         debug: bool = False,
-        customDataId: str = None,
-        phone: str = None,
-        region: str = None,
-        forwardedIp: str = None,
+        customDataId: Optional[str] = None,
+        phone: Optional[str] = None,
+        region: Optional[str] = None,
+        forwardedIp: Optional[str] = None,
         useThrift: bool = False,
         forceTMCP: bool = False,
-        savePath: str = None,
+        savePath: Optional[str] = None,
     ):
         r"""
         Line client for CHRLINE.
