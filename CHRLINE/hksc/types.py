@@ -49,7 +49,7 @@ class HookTypes(object):
             Sub cmds.
             eg: Command name is "GetOps", and use alt=["ops"], so u can use "GetOps" and "ops" to run the command.
         - toType:
-            Only run when receives the command with the specific toType 
+            Only run when receives the command with the specific toType
         - ignoreCase:
             *As the name suggests*
         - inpart:
@@ -64,6 +64,7 @@ class HookTypes(object):
             func.prefixes = prefixes
             func.permissions = permissions
             func.toType = toType
+            func.alt = alt
             @wraps(func)
             def __check(self, *args):
                 _fname = lambda _name = None: func.__name__ if _name is None else _name
